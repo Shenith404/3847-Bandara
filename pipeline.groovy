@@ -19,6 +19,11 @@ pipeline {
         sh 'docker ps'
       }
     }
+    stage('push'){
+      steps{
+        sh 'docker ps'
+      }
+    }
     
   }
 }
