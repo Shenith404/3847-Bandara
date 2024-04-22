@@ -22,9 +22,10 @@ pipeline {
     stage('push'){
       steps{
         script{
-        withCredentials([string(credentialsId: 'docker-hub-pwd', variable: 'docker-pwd')]) {
-    sh 'docker login -u shenithbandara@gmail.com -p ${docker-pwd}'
+          withCredentials([string(credentialsId: 'pwd', variable: 'my-secret')]) {
+    sh 'docker login -u shenithbandara -p ${docker-pwd}'
 }
+        
           
     sh 'docker push henith404/3847-node-app-image'
         }
