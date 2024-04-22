@@ -23,7 +23,7 @@ pipeline {
       steps{
         script{
           withCredentials([string(credentialsId: 'pwd', variable: 'my-secret')]) {
-    sh 'docker login -u shenithbandara -p ${pwd}'
+    sh 'docker login -u shenithbandara -p ${my-secret}'
 }
         
           
