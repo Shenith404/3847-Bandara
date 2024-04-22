@@ -14,7 +14,6 @@ app.get('/', (req, res) => {
       id: '3',
       title: 'Book 3: Alice in Borderland',
     },
-    // Additional book reviews
     {
       id: '4',
       title: 'Book 4: The Name of the Wind',

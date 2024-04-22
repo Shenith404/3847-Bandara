@@ -21,10 +21,16 @@ pipeline {
     }
     stage('push'){
       steps{
-        sh 'docker ps'
+        script{
+          withCredentials([string(credentialsId: 'pwd', variable: 'my-secret')]) {
+    sh 'docker login -u shenithbandara -p ${my-secret}'
+}
+        
+          
+    sh 'docker push henith404/3847-node-app-image'
+        }
       }
     }
-    
   }
 }
 
